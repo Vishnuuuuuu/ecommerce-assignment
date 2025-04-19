@@ -17,13 +17,9 @@ This is a take-home project for building a GraphQL API with MongoDB for sales an
 
 ### ✅ Core Queries
 
-1. **getCustomerSpending**  
-   Returns total spent, average order value, and last order date for a given customer (only completed orders).
-
-2. **getTopSellingProducts**  
-   Returns most sold products by quantity.
-
-3. **getSalesAnalytics**  
+1. **getCustomerSpending**Returns total spent, average order value, and last order date for a given customer (only completed orders).
+2. **getTopSellingProducts**Returns most sold products by quantity.
+3. **getSalesAnalytics**
    Returns revenue, completed order count, and revenue breakdown by category (uses Redis cache for speed).
 
 ---
@@ -43,7 +39,7 @@ This is a take-home project for building a GraphQL API with MongoDB for sales an
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/sales-analytics-api
+git clone https://github.com/Vishnuuuuuu/ecommerce-assignment.git
 cd sales-analytics-api
 npm install
 ```
