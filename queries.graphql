@@ -1,0 +1,60 @@
+# 📊 All Queries for Sales & Revenue Analytics API
+
+# 1️⃣ Get Customer Spending
+query {
+  getCustomerSpending(customerId: "CUSTOMER_UUID_HERE") {
+    customerId
+    totalSpent
+    averageOrderValue
+    lastOrderDate
+  }
+}
+
+# 2️⃣ Get Top Selling Products
+query {
+  getTopSellingProducts(limit: 5) {
+    productId
+    name
+    totalSold
+  }
+}
+
+# 3️⃣ Get Sales Analytics
+query {
+  getSalesAnalytics(startDate: "2025-01-01", endDate: "2025-12-31") {
+    totalRevenue
+    completedOrders
+    categoryBreakdown {
+      category
+      revenue
+    }
+  }
+}
+
+
+# 4️⃣ Place Order (Mutation)
+mutation {
+  placeOrder(input: {
+    customerId: "CUSTOMER_UUID_HERE",
+    products: [
+      { productId: "PRODUCT_UUID_HERE", quantity: 2, priceAtPurchase: 199.99 }
+    ],
+    totalAmount: 399.98,
+    orderDate: "2025-04-19",
+    status: "completed"
+  }) {
+    _id
+    totalAmount
+    status
+  }
+}
+
+# 5️⃣ Get Customer Orders (Paginated)
+query {
+  getCustomerOrders(customerId: "CUSTOMER_UUID_HERE", limit: 2, offset: 0) {
+    _id
+    orderDate
+    totalAmount
+    status
+  }
+}
